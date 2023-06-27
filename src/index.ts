@@ -1,3 +1,7 @@
 import { welcome } from './welcome';
 
-welcome('Hello World');
+const someText = 'Hello World';
+
+welcome(someText);
+
+document.body.innerHTML = `<h2>${someText}</h2>`;
