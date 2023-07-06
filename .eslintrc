@@ -1,10 +1,12 @@
 {
   "extends": [
-    "memcrab"
+    "memcrab",
+    "plugin:i18next/recommended"
   ],
   "plugins": [
     "prettier",
-    "only-warn"
+    "only-warn",
+    "i18next"
   ],
   "parserOptions": {
     "project": [
@@ -15,6 +17,14 @@
     "JSX": true
   },
   "rules": {
-    "jsdoc/newline-after-description": "off"
+    "jsdoc/newline-after-description": "off",
+    "i18next/no-literal-string": [
+      2,
+      {
+        "onlyAttribute": [
+          ""
+        ]
+      }
+    ]
   }
 }
