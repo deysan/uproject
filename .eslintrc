@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "memcrab"
+  ],
+  "plugins": [
+    "prettier",
+    "only-warn"
+  ],
+  "parserOptions": {
+    "project": [
+      "./tsconfig.json"
+    ]
+  },
+  "globals": {
+    "JSX": true
+  },
+  "rules": {
+    "jsdoc/newline-after-description": "off"
+  }
+}

@@ -2,11 +2,11 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Navbar.module.scss';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
 
-interface NavbarProps {
+type NavbarProps = {
   className?: string;
-}
+};
 
-export const Navbar = ({ className }: NavbarProps) => {
+export function Navbar({ className = '' }: NavbarProps) {
   return (
     <div className={classNames(cls.navbar, {}, [className])}>
       <div className={cls.links}>
@@ -23,4 +23,4 @@ export const Navbar = ({ className }: NavbarProps) => {
       </div>
     </div>
   );
-};
+}

@@ -1,10 +1,12 @@
 import { lazy } from 'react';
 
-export const MainPageAsync = lazy(
-  () =>
+export const mainPageAsync = lazy(
+  async () =>
     new Promise((resolve) => {
-      // @ts-ignore
       // TODO delete before deploy
-      setTimeout(() => resolve(import('./MainPage')), 1500);
+      setTimeout(() => {
+        // @ts-expect-error
+        resolve(import('./MainPage'));
+      }, 1500);
     })
 );

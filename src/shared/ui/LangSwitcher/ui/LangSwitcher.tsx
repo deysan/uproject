@@ -3,11 +3,11 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ThemeButton } from 'shared/ui/Button';
 import { useTranslation } from 'react-i18next';
 
-interface LangSwitcherProps {
+type LangSwitcherProps = {
   className?: string;
-}
+};
 
-export const LangSwitcher = ({ className }: LangSwitcherProps) => {
+export function LangSwitcher({ className = '' }: LangSwitcherProps) {
   const { t, i18n } = useTranslation();
 
   const toggleLang = () => {
@@ -23,4 +23,4 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
       {t('translate')}
     </Button>
   );
-};
+}

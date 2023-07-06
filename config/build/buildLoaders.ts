@@ -1,11 +1,11 @@
-import { RuleSetRule } from 'webpack';
+import type { RuleSetRule } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { BuildOptions } from './types/config';
+import type { BuildOptions } from './types/config';
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
   const babelLoader = {
-    test: /\.(js|jsx)$/,
-    exclude: /node_modules/,
+    test: /\.(js|jsx)$/u,
+    exclude: /node_modules/u,
     use: {
       loader: 'babel-loader',
       options: {
@@ -15,13 +15,13 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
   };
 
   const typescriptLoader = {
-    test: /\.tsx?$/,
+    test: /\.tsx?$/u,
     use: 'ts-loader',
-    exclude: /node_modules/,
+    exclude: /node_modules/u,
   };
 
   const cssLoader = {
-    test: /\.s[ac]ss$/i,
+    test: /\.s[ac]ss$/iu,
     use: [
       isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
       {
@@ -40,12 +40,12 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
   };
 
   const svgLoader = {
-    test: /\.svg$/,
+    test: /\.svg$/u,
     use: ['@svgr/webpack'],
   };
 
   const fileLoader = {
-    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    test: /\.(png|jpe?g|gif|woff2|woff)$/iu,
     use: [
       {
         loader: 'file-loader',
