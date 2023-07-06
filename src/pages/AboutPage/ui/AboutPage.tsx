@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { Counter } from 'shared/counter/Counter';
 
-export function AboutPage() {
+// eslint-disable-next-line no-restricted-exports
+export default function AboutPage() {
   const { t } = useTranslation('about');
 
   return (

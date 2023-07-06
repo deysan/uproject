@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
-export function MainPage() {
+// eslint-disable-next-line no-restricted-exports
+export default function MainPage() {
   const { t } = useTranslation('main');
 
   return (
