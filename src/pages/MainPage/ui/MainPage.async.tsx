@@ -7,6 +7,6 @@ export const mainPageAsync = lazy(
       setTimeout(() => {
         // @ts-expect-error
         resolve(import('./MainPage'));
-      }, 1500);
+      }, __SERVER_DELAY_MS__);
     })
 );

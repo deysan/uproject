@@ -3,9 +3,9 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 import cls from './NotFoundPage.module.scss';
 
-interface NotFoundPageProps {
+type NotFoundPageProps = {
   className?: string;
-}
+};
 
 export function NotFoundPage({ className = '' }: NotFoundPageProps) {
   const { t } = useTranslation();

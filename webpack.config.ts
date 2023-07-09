@@ -1,8 +1,11 @@
 import path from 'path';
-import type { Configuration } from 'webpack';
+import { Configuration } from 'webpack';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
-import type { BuildEnv, BuildPaths } from './config/build/types/config';
+import { BuildEnv, BuildPaths } from './config/build/types/config';
 
+const SERVER_PORT = 3000;
+
+// eslint-disable-next-line no-restricted-exports, @getify/proper-arrows/where
 export default (env: BuildEnv) => {
   const paths: BuildPaths = {
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
@@ -11,8 +14,8 @@ export default (env: BuildEnv) => {
     src: path.resolve(__dirname, 'src'),
   };
 
-  const mode = env.mode || 'development';
-  const PORT = env.port || 3000;
+  const mode = env.mode === 'production' ? env.mode : 'development';
+  const PORT = env.port || SERVER_PORT;
 
   const isDev = mode === 'development';
 

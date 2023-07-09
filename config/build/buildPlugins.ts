@@ -1,9 +1,8 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import type { WebpackPluginInstance } from 'webpack';
-import webpack from 'webpack';
-import type { BuildOptions } from './types/config';
+import webpack, { WebpackPluginInstance } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import { BuildOptions } from './types/config';
 
 export function buildPlugins(props: BuildOptions): WebpackPluginInstance[] {
   const { paths, isDev } = props;
@@ -19,6 +18,7 @@ export function buildPlugins(props: BuildOptions): WebpackPluginInstance[] {
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
+      __SERVER_DELAY_MS__: 1500,
     }),
     ...(isDev
       ? [

@@ -7,6 +7,6 @@ export const aboutPageAsync = lazy(
       setTimeout(() => {
         // @ts-expect-error
         resolve(import('./AboutPage'));
-      }, 1500);
+      }, __SERVER_DELAY_MS__);
     })
 );

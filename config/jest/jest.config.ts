@@ -3,6 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
+// eslint-disable-next-line no-restricted-exports
 export default {
   // Automatically clear mock calls, instances and results before every test
   clearMocks: true,

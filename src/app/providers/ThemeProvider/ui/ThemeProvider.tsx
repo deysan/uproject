@@ -1,13 +1,16 @@
-import type { ReactNode } from 'react';
-import { useMemo, useState } from 'react';
+import { ReactNode, useMemo, useState } from 'react';
 import {
   LOCAL_STORAGE_THEME_KEY,
   Theme,
   themeContext,
 } from '../lib/ThemeContext';
 
+const storedTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY);
+
 const defaultTheme =
-  (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
+  storedTheme !== null && storedTheme !== ''
+    ? (storedTheme as Theme)
+    : Theme.LIGHT;
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
