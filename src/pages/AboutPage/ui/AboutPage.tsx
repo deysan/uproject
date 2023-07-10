@@ -7,7 +7,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <h2>{t('about')}</h2>
+      <h2>{t('about-page')}</h2>
       <Counter />
     </>
   );

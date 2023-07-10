@@ -1,4 +1,8 @@
 {
   "translate": "English",
-  "page-not-found": "Страница не найдена"
+  "page-not-found": "Страница не найдена",
+  "menu": "Меню",
+  "increment": "Увеличение",
+  "main": "Главная",
+  "about": "О нас"
 }

@@ -12,6 +12,7 @@ export type ThemeContextProps = {
 
 export const themeContext = createContext<ThemeContextProps>({
   theme: Theme.LIGHT,
+  // eslint-disable-next-line no-empty-function
   setTheme: () => {},
 });
 

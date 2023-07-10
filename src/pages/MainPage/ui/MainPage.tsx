@@ -6,7 +6,7 @@ export default function MainPage() {
 
   return (
     <>
-      <h2>{t('main')}</h2>
+      <h2>{t('main-page')}</h2>
       <p>{t('hello')}</p>
     </>
   );
