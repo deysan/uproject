@@ -4,5 +4,8 @@
   "menu": "Меню",
   "increment": "Увеличение",
   "main": "Главная",
-  "about": "О нас"
+  "about": "О нас",
+  "an-unexpected-error-has-occurred": "Произошла непредвиденная ошибка",
+  "refresh-the-page": "Обновите страницу",
+  "throw-error": "Выбросить ошибку"
 }

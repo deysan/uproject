@@ -4,5 +4,8 @@
   "menu": "Menu",
   "increment": "Increment",
   "main": "Main",
-  "about": "About us"
+  "about": "About us",
+  "an-unexpected-error-has-occurred": "An unexpected error has occurred",
+  "refresh-the-page": "Refresh the page",
+  "throw-error": "Throw Error"
 }
