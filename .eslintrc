@@ -1,12 +1,14 @@
 {
   "extends": [
     "memcrab",
-    "plugin:i18next/recommended"
+    "plugin:i18next/recommended",
+    "plugin:jest-dom/recommended"
   ],
   "plugins": [
     "prettier",
     "only-warn",
-    "i18next"
+    "i18next",
+    "jest-dom"
   ],
   "parserOptions": {
     "project": [
@@ -28,5 +30,15 @@
     ],
     "@typescript-eslint/consistent-type-imports": "off",
     "jsdoc/require-jsdoc": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/src/**/*.test.{ts,tsx}"
+      ],
+      "rules": {
+        "i18next/no-literal-string": "off"
+      }
+    }
+  ]
 }

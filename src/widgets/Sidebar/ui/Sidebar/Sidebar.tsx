@@ -22,11 +22,12 @@ export function Sidebar(props: SidebarProps) {
 
   return (
     <div
+      data-testid="sidebar"
       className={classNames(cls.sidebar, { [cls.collapsed]: isCollapsed }, [
         className,
       ])}
     >
-      <button type="button" onClick={onToggle}>
+      <button data-testid="sidebar-toggle" type="button" onClick={onToggle}>
         {t('menu')}
       </button>
 

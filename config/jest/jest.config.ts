@@ -3,6 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from 'path';
+
 // eslint-disable-next-line no-restricted-exports
 export default {
   // Automatically clear mock calls, instances and results before every test
@@ -25,6 +27,13 @@ export default {
 
   // The glob patterns Jest uses to detect test files
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
+
+  modulePaths: ['<rootDir>src'],
+  setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
+  moduleNameMapper: {
+    '\\.s?css$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+  },
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
