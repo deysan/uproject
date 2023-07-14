@@ -19,3 +19,6 @@ export const parameters = {
 addDecorator(StyleDecorator);
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
 addDecorator(ThemeDecorator(Theme.LIGHT));
+// @ts-expect-error
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call
+addDecorator(RouterDecorator);

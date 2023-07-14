@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta } from '@storybook/react';
 
 import { Button, ThemeButton } from './Button';
 
@@ -14,25 +14,30 @@ export default {
   },
 } as ComponentMeta<typeof Button>;
 
-const template: ComponentStory<typeof Button> = function (args) {
-  return <Button {...args} />;
+export const primary: ComponentMeta<typeof Button> = {
+  args: {
+    children: 'Button',
+  },
 };
 
-export const Clear = template.bind({});
-Clear.args = {
-  children: 'Button',
-  theme: ThemeButton.CLEAR,
+export const clear: ComponentMeta<typeof Button> = {
+  args: {
+    children: 'Button',
+    theme: ThemeButton.CLEAR,
+  },
 };
 
-export const Outline = template.bind({});
-Outline.args = {
-  children: 'Button',
-  theme: ThemeButton.OUTLINE,
+export const outline: ComponentMeta<typeof Button> = {
+  args: {
+    children: 'Button',
+    theme: ThemeButton.OUTLINE,
+  },
 };
 
-export const OutlineDark = template.bind({});
-OutlineDark.args = {
-  children: 'Button',
-  theme: ThemeButton.OUTLINE,
+export const outlineDark: ComponentMeta<typeof Button> = {
+  args: {
+    children: 'Button',
+    theme: ThemeButton.OUTLINE,
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
 };
-OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
